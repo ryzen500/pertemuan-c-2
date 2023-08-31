@@ -1,0 +1,42 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+// Pertemuan 5  PErcobaan
+
+void soal1(){
+  float suhuCelcius, suhuFahrenheit;
+
+    printf("Masukkan Suhu dalam Celcius=  ");
+    scanf("%f", &suhuCelcius);
+    
+    suhuFahrenheit = (suhuCelcius * 9/5) + 32;
+    printf("Suhu dalam fahrenheit adalah = %2.f \n", suhuFahrenheit);
+}
+
+void soal2(){
+    
+}
+
+void soal3(){
+    int jmlTiket;
+    int jm3,sm3;
+    int biaya;
+    printf("Masukkan Jumlah Tiket yang dibeli : ");
+    scanf("%d", &jmlTiket);
+    
+    jm3 = jmlTiket/3;
+    sm3 = jmlTiket % 3;
+    
+    biaya =  (jm3 * (2 * 50000)) + (sm3 * 50000);
+    printf("Biaya yang harus dibayar : Rp %d,\n", biaya);
+}
+
+
+//  Pertemuan 5 Resmi 
+int main() {
+    // Write C code here
+    // printf("Hello world");
+
+soal1();
+    return 0;
+}
