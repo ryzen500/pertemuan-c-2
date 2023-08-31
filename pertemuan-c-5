@@ -1,0 +1,142 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+// Pertemuan 5  PErcobaan
+
+void soal1(){
+ 
+ int a;
+ 
+ printf("masukkan Angka A  = ");
+ scanf("%d", &a);
+ 
+ 
+ if(a >= 0 ){
+     printf("Bilangan A adalah bilangan Positif");
+ }
+ 
+ if(a < 0){
+     printf("Bilangan A termasuk bilangan Negatif");
+ }
+    
+}
+
+
+void soal2(){
+    int a; 
+    
+    printf("Masukkan Inputan Bilangan A  = ");
+    scanf("%d",&a);
+    
+     if(a % 2  == 0){
+         printf("Bilangan Genap");
+     }else{
+         printf("Bilangan Ganjil");
+     }
+}
+
+
+void soal3(){
+    int harga_beli; 
+    int diskon = 0;
+    int qty, hasil; 
+    
+    printf("Masukkan Harga Beli yang ada disini =  \n");
+    scanf("%d", &harga_beli);
+    
+    
+    printf("Quantity yang dibutuhkan  =  \n");
+    scanf("%d", &qty);
+    // harga_beli = 100000;
+    hasil = harga_beli * qty;
+    
+    if(hasil >= 100000){
+         diskon = 0.05 * hasil;
+            printf("TOtal Harga yang dibeli adalah = %d \n",hasil);
+        printf("TOtal Diskon yang diberikan adalah = %d \n ",diskon);
+    }else{
+        printf("TOtal Harga yang dibeli adalah = %d  \n",hasil);
+        printf("TOtal Diskon yang diberikan adalah = %d \n",diskon);
+        
+        
+    }
+}
+
+void soal4(){
+    int a, b;
+    
+    // Berikan Inputan 
+    printf("Nilai A  = \n");
+    scanf("%d", &a);
+    
+    
+    
+    // Berikan Inputan 
+    printf("Nilai B  = \n");
+    scanf("%d", &b);
+    
+    if(a % b == 0){
+        printf("Bilangan pertama adalah kelipatan persekutuan bilangan kedua");
+    }else{
+                printf("Bilangan pertama bukan kelipatan persekutuan bilangan kedua");
+    }
+}
+
+void soal5(){
+    int  bilA,bilB;
+    double result;
+    
+    // Proses Penginputan 
+    printf("Input Nilai A  = ");
+    scanf("%d", &bilA);
+    
+    
+    // Proses Penginputan 
+    printf("Input Nilai B  = ");
+    scanf("%d", &bilB);
+    
+    result = bilA / bilB;
+    
+    if(bilB > 0 ){
+     printf("Hasil Pembagian : %.3f \n", result);
+
+    }else{
+        // MEssage error nya kalau dia dibagi 0  
+        printf("Kesalahan : division by zero \n", result);
+    }
+}
+
+
+void soal3A(){
+    int bilangan,hasil; 
+    
+    printf("Masukkan sebuah bilangan: ");
+    scanf("%d", &bilangan);
+    
+    // Function abs(Absolute); 
+    hasil = abs(bilangan);
+    
+    printf("Hasil Absolut dari bilangan yang kita input adalah = %d ", hasil);
+}
+
+
+void soal5ABC(){
+    int bilangan; 
+    
+    printf("Masukkan sebuah bilangan: ");
+    scanf("%d", &bilangan);
+    
+    if(bilangan > 0){
+        printf("Kategori A ");
+    }else{
+        printf("Kategori B");
+    }
+}
+//  Pertemuan 5 Resmi 
+int main() {
+    // Write C code here
+    // printf("Hello world");
+
+soal3A();
+    return 0;
+}
