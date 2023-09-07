@@ -14,7 +14,44 @@ void soal1(){
 }
 
 void soal2(){
-    
+    // Deklarasi variabel
+    float gajiPokok, tunjanganIstriSuami, tunjanganAnak, thr, pajak, bantuanTransport, polisAsuransi, totalPendapatan;
+    int jumlahAnak, masaKerja, hariMasukKerja;
+
+    // Input gaji pokok, tunjangan istri/suami, jumlah anak, masa kerja, dan jumlah hari masuk kerja
+    printf("Masukkan gaji pokok: ");
+    scanf("%f", &gajiPokok);
+
+    printf("Masukkan tunjangan istri/suami: ");
+    scanf("%f", &tunjanganIstriSuami);
+
+    printf("Masukkan jumlah anak: ");
+    scanf("%d", &jumlahAnak);
+
+    printf("Masukkan masa kerja (tahun): ");
+    scanf("%d", &masaKerja);
+
+    printf("Masukkan jumlah hari masuk kerja: ");
+    scanf("%d", &hariMasukKerja);
+
+    // Menghitung THR
+    thr = 5000 * masaKerja;
+
+    // Menghitung tunjangan anak
+    tunjanganAnak = 0.05 * gajiPokok * jumlahAnak;
+
+    // Menghitung pajak
+    pajak = 0.15 * (gajiPokok + tunjanganIstriSuami + tunjanganAnak);
+
+    // Menghitung bantuan transport
+    bantuanTransport = 3000 * hariMasukKerja;
+
+    // Menghitung total pendapatan bulanan
+    totalPendapatan = gajiPokok + tunjanganIstriSuami + tunjanganAnak + thr - pajak + bantuanTransport - 20000;
+
+    // Menampilkan total pendapatan bulanan
+    printf("Total pendapatan bulanan karyawan: Rp %.2f\n", totalPendapatan);
+
 }
 
 void soal3(){
