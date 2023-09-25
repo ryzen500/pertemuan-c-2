@@ -1,0 +1,266 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <ctype.h> // Untuk menggunakan islower, isupper, dan isdigit
+
+
+void soal1(){
+        char karakter;
+        
+        printf("Masukkan Karakter  (Huruf X untuk keluar \n) ");
+        
+        
+        //infinite  loop using condition  
+        while(1){
+            karakter = getchar();
+            
+            if(karakter == 'X'){
+                printf("Program Berhenti");
+                break;
+            }
+            
+               printf("Karakter yang Anda masukkan: %c \n", karakter);
+        }
+}
+
+void soal2(){
+    
+     int bilangan, total = 0;
+    char pilihan;
+
+    printf("Masukkan bilangan ke-1: ");
+    scanf("%d", &bilangan);
+    total += bilangan;
+
+    while (1) {
+        printf("Mau memasukkan data lagi [y/t] ? ");
+        scanf(" %c", &pilihan);
+
+        if (pilihan != 'y' && pilihan != 'Y')
+            break;
+
+        int nomor_bilangan;
+        printf("Masukkan bilangan ke-%d: ", total + 1);
+        scanf("%d", &nomor_bilangan);
+        total += nomor_bilangan;
+    }
+
+    printf("Total bilangan = %d\n", total);
+
+    
+}
+
+void soal3(){
+     int bilangan, total = 0;
+    int jumlah_bilangan = 0;
+    int nilai_minimal = 0;
+    int nilai_maksimal = 0;
+    char pilihan;
+
+    printf("Masukkan bilangan ke-1: ");
+    scanf("%d", &bilangan);
+    total += bilangan;
+    nilai_minimal = bilangan;
+    nilai_maksimal = bilangan;
+    jumlah_bilangan++;
+
+    while (1) {
+        printf("Mau memasukkan data lagi [y/t] ? ");
+        scanf(" %c", &pilihan);
+
+        if (pilihan != 'y' && pilihan != 'Y')
+            break;
+
+        int nomor_bilangan;
+        printf("Masukkan bilangan ke-%d: ", jumlah_bilangan + 1);
+        scanf("%d", &nomor_bilangan);
+
+        total += nomor_bilangan;
+        jumlah_bilangan++;
+
+        if (nomor_bilangan < nilai_minimal) {
+            nilai_minimal = nomor_bilangan;
+        }
+
+        if (nomor_bilangan > nilai_maksimal) {
+            nilai_maksimal = nomor_bilangan;
+        }
+    }
+
+    if (jumlah_bilangan > 0) {
+        double rata_rata = (double)total / jumlah_bilangan;
+        printf("Total bilangan = %d\n", total);
+        printf("Rata-rata = %.2lf\n", rata_rata);
+        printf("Nilai minimal = %d\n", nilai_minimal);
+        printf("Nilai maksimal = %d\n", nilai_maksimal);
+    } else {
+        printf("Tidak ada bilangan yang dimasukkan.\n");
+    }
+
+}
+
+void soal4(){
+       int n;
+
+    printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    int total = 0;
+    for (int i = 0; i < n; i++) {
+        total += i;
+        printf("%d ", total);
+    }
+
+    printf("\n");
+
+}
+
+void soal5(){
+     char karakter;
+    int jumlahKarakter = 0;
+    int jumlahSpasi = 0;
+
+    printf("Ketikkan sembarang kalimat:\n");
+
+    while (1) {
+        karakter = getchar();  // Membaca karakter dari keyboard
+
+        if (karakter == '\n') {  // Cek jika tombol ENTER ditekan untuk mengakhiri
+            break;
+        }
+
+        jumlahKarakter++;
+
+        if (karakter == ' ') {  // Cek jika karakter adalah spasi
+            jumlahSpasi++;
+        }
+    }
+
+    printf("Jumlah karakter = %d\n", jumlahKarakter);
+    printf("Jumlah spasi = %d\n", jumlahSpasi);
+
+
+}
+
+
+void soal6(){
+        int bilangan;
+    int total = 0;
+
+    printf("Masukkan bilangan: ");
+    scanf("%d", &bilangan);
+
+    int sisa;
+    while (bilangan > 0) {
+        sisa = bilangan % 10; // Mengambil digit terakhir
+        total += sisa;
+        bilangan /= 10; // Menghapus digit terakhir
+    }
+
+    printf("Jumlah angka dari bilangan = %d\n", total);
+
+}
+
+void soal7(){
+    double biayaAwal, tiapBulan, kenaikanTahunan, target;
+
+    printf("Masukkan biaya awal haji (juta rupiah): ");
+    scanf("%lf", &biayaAwal);
+
+    printf("Masukkan jumlah tabungan tiap bulan (rupiah): ");
+    scanf("%lf", &tiapBulan);
+
+    printf("Masukkan kenaikan biaya haji per tahun (%): ");
+    scanf("%lf", &kenaikanTahunan);
+
+    printf("Masukkan target biaya haji (juta rupiah): ");
+    scanf("%lf", &target);
+
+    int bulan = 0;
+
+    while (biayaAwal < target) {
+        biayaAwal += tiapBulan;
+        bulan++;
+
+        if (bulan % 12 == 0) {
+            biayaAwal *= (1 + kenaikanTahunan / 100.0);
+        }
+    }
+
+    printf("Dibutuhkan %d bulan untuk mencapai target biaya haji.\n", bulan);
+
+}
+
+void soal2Resmi(){
+ char input[100]; // Maksimal panjang string 100 karakter, bisa disesuaikan
+    int hurufKecil = 0;
+    int hurufBesar = 0;
+    int karakterAngka = 0;
+
+    printf("Masukkan sebuah string: ");
+    scanf("%s", input);
+
+    for (int i = 0; input[i] != '\0'; i++) {
+        if (islower(input[i])) {
+            hurufKecil++;
+        } else if (isupper(input[i])) {
+            hurufBesar++;
+        } else if (isdigit(input[i])) {
+            karakterAngka++;
+        }
+    }
+
+    printf("Jumlah huruf kecil: %d\n", hurufKecil);
+    printf("Jumlah huruf besar: %d\n", hurufBesar);
+    printf("Jumlah karakter angka: %d\n", karakterAngka);
+    
+}
+
+
+void soal4Resmi() {
+    double biayaAwal, tiapBulan, kenaikanTahunan, target, bonusGaji;
+    
+    printf("Masukkan biaya awal haji (juta rupiah): ");
+    scanf("%lf", &biayaAwal);
+    
+    printf("Masukkan jumlah tabungan tiap bulan (rupiah): ");
+    scanf("%lf", &tiapBulan);
+    
+    printf("Masukkan kenaikan biaya haji per tahun (%): ");
+    scanf("%lf", &kenaikanTahunan);
+    
+    printf("Masukkan target biaya haji (juta rupiah): ");
+    scanf("%lf", &target);
+    
+    printf("Masukkan bonus gaji setiap 6 bulan (ribu rupiah): ");
+    scanf("%lf", &bonusGaji);
+    
+    int bulan = 0;
+    int bonusCounter = 0;
+    
+    while (biayaAwal < target) {
+        bulan++;
+        bonusCounter++;
+        
+        if (bonusCounter == 6) {
+            // Setiap 6 bulan, tambahkan bonus gaji ke tabungan
+            biayaAwal += bonusGaji * 1000.0;
+            bonusCounter = 0;
+        }
+        
+        biayaAwal += tiapBulan;
+        
+        if (bulan % 12 == 0) {
+            biayaAwal *= (1 + kenaikanTahunan / 100.0);
+        }
+    }
+    
+    printf("Dibutuhkan %d bulan untuk mencapai target biaya haji.\n", bulan);
+}
+
+int main() {
+    // Write C code here
+    // printf("Hello world");
+    soal4Resmi();
+
+    return 0;
+}
