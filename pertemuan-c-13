@@ -1,0 +1,95 @@
+#include <stdio.h>
+
+// Prototipe fungsi triangular
+void triangular(int n);
+
+int calculateC(int n);
+
+int calculateS(int n);
+
+float kuadrat(float n);
+int main() {
+    
+    // declare float n soal 3 
+    
+    int n;
+    // float n;
+  int jumlahPerulangan;
+
+
+// Soal 2 
+    // printf("Masukkan nilai n: ");
+    // scanf("%d", &n);
+
+    // Memanggil fungsi triangular
+    // triangular(n);
+
+
+
+// Soal 1
+    // printf("Masukkan jumlah perulangan: ");
+    // scanf("%d", &jumlahPerulangan);
+
+    // for (int i = 0; i < jumlahPerulangan; i++) {
+    //     // Memanggil fungsi menu
+    //     menu();
+    // }
+
+
+// Soal 3
+    // printf("Masukkan nilai n: ");
+    // scanf("%f", &n);
+    
+    // kuadrat(n);
+    
+    
+    
+    // Soal 4 
+     printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    int Cn = calculateC(n);
+    int Sn = calculateS(n);
+
+    printf("C%d = %d\n", n, Cn);
+    printf("S%d = %d\n", n, Sn);
+
+    return 0;
+}
+
+// Implementasi fungsi triangular
+void triangular(int n) {
+    int hasil = 0;
+
+    for (int i = 1; i <= n; i++) {
+        hasil += i;
+    }
+
+    printf("Jumlah triangular dari %d adalah %d\n", n, hasil);
+}
+
+
+float kuadrat(float n){
+    float total; 
+    
+    total = n * n;
+    
+    printf("Kuadrat adalah %2f\n", total);
+}
+
+int calculateC(int n) {
+    if (n == 0) {
+        return 1; // Basis: C0 = 1
+    } else {
+        return 2 * calculateC(n - 1) + 1;
+    }
+}
+
+// Fungsi untuk menghitung Sn
+int calculateS(int n) {
+    if (n == 1) {
+        return 0; // Basis: S1 = 0
+    } else {
+        return calculateS(n - 1) + n - 1;
+    }
+}
