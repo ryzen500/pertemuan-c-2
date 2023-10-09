@@ -1,0 +1,190 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void soal1(){
+    char ch;
+    
+    printf("Masukkan karakter (tekan Enter untuk berhenti):\n");
+
+    while (1) { // Loop tak terbatas
+        ch = getchar(); // Membaca karakter dari input
+        
+        if (ch == '\n') {
+            break; // Keluar dari loop jika Enter ditekan
+        }
+
+        if (ch == ' ') {
+            continue; // Mengabaikan spasi dan melanjutkan ke karakter berikutnya
+        }
+
+        putchar(ch); // Menampilkan karakter yang tidak spasi
+    }
+
+    printf("\nProgram berakhir.\n");
+
+    
+    
+}
+
+
+void soal2(){
+     int n;
+    printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i < n; i++) {
+        if (i % 2 == 1 && i % 3 != 0) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+}
+
+void soal3(){
+      int n;
+    printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i < n; i++) {
+        if (i % 2 == 0) {
+            continue; // Melanjutkan loop jika i genap
+        }
+
+        if (i % 7 == 0 || i % 11 == 0) {
+            continue; // Melanjutkan loop jika i kelipatan 7 atau 11
+        }
+
+        printf("%d ", i);
+    }
+
+    printf("\n");
+}
+
+
+void soal4(){
+     int n;
+    printf("Masukkan jumlah data: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Jumlah data harus lebih dari 0.\n");
+        return 1; // Keluar dari program dengan kode error
+    }
+
+    double nilai, total = 0;
+    double minimal, maksimal;
+
+    printf("Masukkan nilai ke-1: ");
+    scanf("%lf", &nilai);
+
+    minimal = nilai;
+    maksimal = nilai;
+    total += nilai;
+
+    for (int i = 2; i <= n; i++) {
+        printf("Masukkan nilai ke-%d: ", i);
+        scanf("%lf", &nilai);
+
+        if (nilai < minimal) {
+            minimal = nilai;
+        }
+
+        if (nilai > maksimal) {
+            maksimal = nilai;
+        }
+
+        total += nilai;
+    }
+
+    double rata_rata = total / n;
+
+    printf("Nilai minimal: %.2lf\n", minimal);
+    printf("Nilai maksimal: %.2lf\n", maksimal);
+    printf("Nilai rata-rata: %.2lf\n", rata_rata);
+
+}
+
+void soal5(){
+      int n;
+    printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+}
+
+void soal6(){
+       int n;
+    printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", i);
+        }
+        printf("\n");
+    }
+}
+
+void soal7(){
+      char choice;
+    do {
+        int n;
+        printf("Masukkan nilai n: ");
+        scanf("%d", &n);
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                printf("%d ", i);
+            }
+            printf("\n");
+        }
+
+        printf("Apakah anda ingin keluar (y/t)? ");
+        scanf(" %c", &choice); // Perhatikan spasi sebelum %c untuk menghindari input newline sebelumnya
+    } while (choice != 'y' && choice != 'Y'); // Ulangi program jika bukan 'y' atau 'Y'
+
+}
+
+void soal3LaporanResmi(){
+     int n;
+    printf("Masukkan nilai n: ");
+    scanf("%d", &n);
+
+    int count = 0; // Variabel untuk menghitung bilangan prima
+    int num = 2;   // Bilangan pertama yang akan diuji
+
+    while (count < n) {
+        int is_prime = 1; // Inisialisasi sebagai bilangan prima
+
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                is_prime = 0; // Bukan bilangan prima
+                break;
+            }
+        }
+
+        if (is_prime) {
+            printf("%d ", num);
+            count++;
+        }
+
+        num++; // Cek bilangan berikutnya
+    }
+
+    printf("\n");
+}
+
+int main() {
+    // Write C code here
+    // printf("Hello world");
+
+    soal3LaporanResmi();
+    return 0;
+}
